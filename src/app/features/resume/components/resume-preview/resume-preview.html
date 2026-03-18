@@ -1,0 +1,20 @@
+<div #resumeContent id="resume-content">
+  <h2>{{ data?.name }}</h2>
+  <p>{{ data?.email }}</p>
+
+  <h3>Summary</h3>
+  <p>{{ data?.summary }}</p>
+
+  <h3>Skills</h3>
+  <p>{{ data?.skills }}</p>
+
+  <h3>Experience</h3>
+  <div *ngFor="let exp of data?.experiences">
+    <p><b>{{ exp.company }}</b> - {{ exp.role }}</p>
+  </div>
+
+  <h3>Education</h3>
+  <div *ngFor="let edu of data?.education">
+    <p><b>{{ edu.college }}</b> - {{ edu.degree }}</p>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<input placeholder="Name" [(ngModel)]="formData.name" (input)="onChange()" />
+<input placeholder="Email" [(ngModel)]="formData.email" (input)="onChange()" />
+<textarea placeholder="Skills" [(ngModel)]="formData.skills" (input)="onChange()"></textarea>
+
+
+<h3>Experience</h3>
+
+<div *ngFor="let exp of formData.experiences; let i = index">
+  <input placeholder="Company" [(ngModel)]="exp.company" (input)="onChange()" />
+  <input placeholder="Role" [(ngModel)]="exp.role" (input)="onChange()" />
+
+  <button (click)="removeExperience(i)">Remove</button>
+</div>
+
+<button (click)="addExperience()">+ Add Experience</button>
+
+<h3>Education</h3>
+
+<div *ngFor="let edu of formData.education; let i = index">
+  <input placeholder="College" [(ngModel)]="edu.college" (input)="onChange()" />
+  <input placeholder="Degree" [(ngModel)]="edu.degree" (input)="onChange()" />
+
+  <button (click)="removeEducation(i)">Remove</button>
+</div>
+
+<button (click)="addEducation()">+ Add Education</button>
+
+<textarea placeholder="Summary" [(ngModel)]="formData.summary"></textarea>
+
+<button (click)="generateSummary()">✨ Generate Summary</button>
